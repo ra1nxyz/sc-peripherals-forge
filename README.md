@@ -3,26 +3,27 @@
 Currently tracking the progress of translating Kotlin (`.kt`) files from Fabric to Forge, including api imports
 I have never worked with kotlin or mc mods so this is a personal project for fun requested by a friend :3
 
-## Key
+## what mean what
 
-- <span style="color:green">[✅]</span> — Translated and tested to work
-- <span style="color:red">[❌]</span> — Translated and in testing / not working
+- [✅] — Translated and tested to work
+- [❌] — Translated and in testing / not working
+- [🛠️] — Work in progress 
 - [ ] — Not yet translated
 
 
 ## Translation Progress Checklist
 
 ### library/networking
-- [ ] NetworkUtil.kt
-- [ ] ScLibraryPacket.kt
+- [❌] NetworkUtil.kt
+- [❌] ScLibraryPacket.kt
 
 ### peripherals/block
-- [ ] ChameliumBlock.kt
+- [❌] ChameliumBlock.kt
 
 ### peripherals/client/block
-- [ ] PosterPrinterRenderer.kt
+- [🛠️] PosterPrinterRenderer.kt
 - [ ] PrintBakedModel.kt
-- [ ] PrinterRenderer.kt
+- [🛠️] PrinterRenderer.kt
 - [ ] PrintUnbakedModel.kt
 
 ### peripherals/client/gui
@@ -59,7 +60,7 @@ I have never worked with kotlin or mc mods so this is a personal project for fun
 
 ### peripherals/posters/printer
 - [ ] PosterPrinterBlock.kt
-- [ ] PosterPrinterBlockEntity.kt
+- [🛠️] PosterPrinterBlockEntity.kt
 - [ ] PosterPrinterInkPacket.kt
 - [ ] PosterPrinterPeripheral.kt
 - [ ] PosterPrinterScreenHandler.kt
@@ -104,16 +105,12 @@ I have never worked with kotlin or mc mods so this is a personal project for fun
 - [ ] ValidatingSlot.kt
 
 ### peripherals
-- [ ] ModBlocks.kt
+- [🛠️] ModBlocks.kt
 - [ ] Registration.kt
 - [ ] ScPeripherals.kt
-- [ ] SCPeripheralsForge.kt
+- [🛠️] SCPeripheralsForge.kt
 - [ ] ScPeripheralsPrometheus.kt
 
-
-*Mark each file as:*
-- <span style="color:green">[✅]</span> when fully translated and tested to work on Forge
-- <span style="color:red">[❌]</span> when translated but in testing or not working
 
 ---
 
