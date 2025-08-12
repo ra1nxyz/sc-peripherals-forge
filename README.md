@@ -5,8 +5,8 @@ I have never worked with kotlin or mc mods so this is a personal project for fun
 
 ## Key
 
-- <span style="color:green">[✓]</span> — Translated and tested to work
-- <span style="color:red">[x]</span> — Translated and in testing / not working
+- <span style="color:green">[✅]</span> — Translated and tested to work
+- <span style="color:red">[❌]</span> — Translated and in testing / not working
 - [ ] — Not yet translated
 
 
@@ -112,8 +112,8 @@ I have never worked with kotlin or mc mods so this is a personal project for fun
 
 
 *Mark each file as:*
-- <span style="color:green">[✓]</span> when fully translated and tested to work on Forge
-- <span style="color:red">[x]</span> when translated but in testing or not working
+- <span style="color:green">[✅]</span> when fully translated and tested to work on Forge
+- <span style="color:red">[❌]</span> when translated but in testing or not working
 
 ---
 
