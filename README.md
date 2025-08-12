@@ -8,7 +8,9 @@ I have never worked with kotlin or mc mods so this is a personal project for fun
 - [✅] — Translated and tested to work
 - [❌] — Translated and in testing / not working
 - [🛠️] — Work in progress 
-- [ ] — Not yet translated
+- [-] — Not yet translated
+
+### Outstanding errors: 704~
 
 
 ## Translation Progress Checklist
@@ -22,94 +24,94 @@ I have never worked with kotlin or mc mods so this is a personal project for fun
 
 ### peripherals/client/block
 - [🛠️] PosterPrinterRenderer.kt
-- [ ] PrintBakedModel.kt
+- [-] PrintBakedModel.kt
 - [🛠️] PrinterRenderer.kt
-- [ ] PrintUnbakedModel.kt
+- [-] PrintUnbakedModel.kt
 
 ### peripherals/client/gui
-- [ ] PosterPrinterScreen.kt
-- [ ] PrinterScreen.kt
-- [ ] ProgressBar.kt
+- [-] PosterPrinterScreen.kt
+- [-] PrinterScreen.kt
+- [-] ProgressBar.kt
 
 ### peripherals/client/item
-- [ ] PosterHeadFeatureRenderer.kt
-- [ ] PosterRenderer.kt
-- [ ] ScPeripheralsClient.kt
+- [-] PosterHeadFeatureRenderer.kt
+- [-] PosterRenderer.kt
+- [-] ScPeripheralsClient.kt
 
 ### peripherals/config
-- [ ] ModMenu.kt
-- [ ] ScPeripheralsClientConfig.kt
-- [ ] ScPeripheralsConfig.kt
+- [-] ModMenu.kt
+- [-] ScPeripheralsClientConfig.kt
+- [-] ScPeripheralsConfig.kt
 
 ### peripherals/datagen/recipes/handlers
-- [ ] PrinterRecipes.kt
-- [ ] RecipeHandlers.kt
+- [-] PrinterRecipes.kt
+- [-] RecipeHandlers.kt
 
 ### peripherals/datagen
-- [ ] RecipeGenerator.kt
-- [ ] BlockLootTableProvider.kt
-- [ ] BlockTagProvider.kt
-- [ ] ModelProvider.kt
-- [ ] ScPeripheralsDatagen.kt
+- [-] RecipeGenerator.kt
+- [-] BlockLootTableProvider.kt
+- [-] BlockTagProvider.kt
+- [-] ModelProvider.kt
+- [-] ScPeripheralsDatagen.kt
 
 ### peripherals/item
-- [ ] ChameliumItem.kt
-- [ ] EmptyInkCartridgeItem.kt
-- [ ] InkCartridgeItem.kt
-- [ ] TextureAnalyzerItem.kt
+- [-] ChameliumItem.kt
+- [-] EmptyInkCartridgeItem.kt
+- [-] InkCartridgeItem.kt
+- [-] TextureAnalyzerItem.kt
 
 ### peripherals/posters/printer
-- [ ] PosterPrinterBlock.kt
+- [-] PosterPrinterBlock.kt
 - [🛠️] PosterPrinterBlockEntity.kt
-- [ ] PosterPrinterInkPacket.kt
-- [ ] PosterPrinterPeripheral.kt
-- [ ] PosterPrinterScreenHandler.kt
-- [ ] PosterPrinterStartPrintPacket.kt
+- [-] PosterPrinterInkPacket.kt
+- [-] PosterPrinterPeripheral.kt
+- [-] PosterPrinterScreenHandler.kt
+- [-] PosterPrinterStartPrintPacket.kt
 
 ### peripherals/posters
-- [ ] PosterItem.kt
-- [ ] PosterPrintData.kt
-- [ ] PosterRequestC2SPacket.kt
-- [ ] PosterState.kt
-- [ ] PosterUpdateS2CPacket.kt
-- [ ] PosterWorld.kt
+- [-] PosterItem.kt
+- [-] PosterPrintData.kt
+- [-] PosterRequestC2SPacket.kt
+- [-] PosterState.kt
+- [-] PosterUpdateS2CPacket.kt
+- [-] PosterWorld.kt
 
 ### peripherals/prints/printer
-- [ ] PrinterBlock.kt
-- [ ] PrinterBlockEntity.kt
-- [ ] PrinterDataPacket.kt
-- [ ] PrinterInkPacket.kt
-- [ ] PrinterPeripheral.kt
-- [ ] PrinterScreenHandler.kt
+- [-] PrinterBlock.kt
+- [-] PrinterBlockEntity.kt
+- [-] PrinterDataPacket.kt
+- [-] PrinterInkPacket.kt
+- [-] PrinterPeripheral.kt
+- [-] PrinterScreenHandler.kt
 
 ### peripherals/prints
-- [ ] PrintBlock.kt
-- [ ] PrintBlockEntity.kt
-- [ ] PrintData.kt
-- [ ] PrintItem.kt
-- [ ] PrintRecipe.kt
-- [ ] Shape.kt
-- [ ] Shapes.kt
+- [-] PrintBlock.kt
+- [-] PrintBlockEntity.kt
+- [-] PrintData.kt
+- [-] PrintItem.kt
+- [-] PrintRecipe.kt
+- [-] Shape.kt
+- [-] Shapes.kt
 
 ### peripherals/util
-- [ ] BaseBlock.kt
-- [ ] BaseBlockEntity.kt
-- [ ] BaseBlockWithEntity.kt
-- [ ] BaseItem.kt
-- [ ] ImplementedInventory.kt
-- [ ] InventoryPeripheral.kt
-- [ ] LuaTableExt.kt
-- [ ] NbtExt.kt
-- [ ] PropertyDelegateGetter.kt
-- [ ] ScreenHandlerPropertyUpdateIntS2CPacket.kt
-- [ ] ValidatingSlot.kt
+- [-] BaseBlock.kt
+- [-] BaseBlockEntity.kt
+- [-] BaseBlockWithEntity.kt
+- [-] BaseItem.kt
+- [-] ImplementedInventory.kt
+- [-] InventoryPeripheral.kt
+- [-] LuaTableExt.kt
+- [-] NbtExt.kt
+- [-] PropertyDelegateGetter.kt
+- [-] ScreenHandlerPropertyUpdateIntS2CPacket.kt
+- [-] ValidatingSlot.kt
 
 ### peripherals
 - [🛠️] ModBlocks.kt
-- [ ] Registration.kt
-- [ ] ScPeripherals.kt
+- [-] Registration.kt
+- [-] ScPeripherals.kt
 - [🛠️] SCPeripheralsForge.kt
-- [ ] ScPeripheralsPrometheus.kt
+- [-] ScPeripheralsPrometheus.kt
 
 
 ---
