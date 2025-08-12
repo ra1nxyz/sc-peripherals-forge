@@ -161,7 +161,6 @@ class PosterPrinterBlockEntity(
         markDirty()
       }
 
-      // Send ink update packets to any tracking entities
       if (inksDirty) {
         sendToAllTracking(level.getChunkAt(blockPos), PosterPrinterInkPacket(blockPos, ink))
         inksDirty = false
@@ -171,9 +170,7 @@ class PosterPrinterBlockEntity(
         outputDirty = false
       }
 
-      // Send data update packets to any tracking entities
       if (dataDirty) {
-//      sendToAllTracking(level.getChunkAt(blockPos), PrinterDataPacket(blockPos, data))
         dataDirty = false
       }
 

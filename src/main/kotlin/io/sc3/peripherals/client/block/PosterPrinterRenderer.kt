@@ -19,7 +19,7 @@ import org.joml.Matrix4f;
 import org.joml.Matrix3f;
 import com.mojang.blaze3d.vertex.VertexConsumer
 import net.minecraft.client.model.geom.ModelPart
-//import net.minecraft.client.model.geom.
+//import net.minecraft.client.model.geom.TexturedModelData
 import com.mojang.blaze3d.vertex.PoseStack
 import net.minecraft.world.level.block.entity.BlockEntity
 
@@ -70,7 +70,7 @@ class PosterPrinterRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEnt
       matrices.scale(9 / 16f, 9 / 16f, 9 / 16f)
       PosterRenderer.drawBackground(matrices, vertexConsumers, light)
 
-      PosterItem.getPosterState(posterId, entity.world)?.let {
+      PosterItem.getPosterState(posterId, entity.level)?.let {
         PosterRenderer.draw(matrices, vertexConsumers, posterId, it, light)
       }
 
@@ -91,7 +91,7 @@ class PosterPrinterRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEnt
     val posterId = entity.animatingPosterId ?: return
     val world = entity.level ?: return
     val animationTime = (world.time - entity.animationStartTime) + tickDelta
-    val progress = (animationTime.toFloat() / entity.maxPrintProgress.toFloat()).coerceIn(0f, 1f)
+    val progress: Float = ((animationTime as Number).toFloat() / (entity.maxPrintProgress as Number).toFloat()).coerceIn(0f, 1f)
     if (progress >= 1f) {
       val overshoot = world.time - (entity.animationStartTime + entity.maxPrintProgress)
       if (!output.isEmpty || overshoot > 20) { // give 20 tick buffer to receive inventory update
@@ -142,7 +142,7 @@ class PosterPrinterRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEnt
       matrices: PoseStack,
       entity: PosterPrinterBlockEntity,
       tickDelta: Float,
-      vertexConsumers: VertexConsumerProvider,
+      vertexConsumers: MultiBufferSource,
       light: Int,
       overlay: Int
   ) {
