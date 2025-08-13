@@ -5,42 +5,43 @@ import io.sc3.library.ext.rotateTowards
 import io.sc3.peripherals.Registration.ModBlockEntities
 import io.sc3.peripherals.ScPeripherals.ModId
 import io.sc3.peripherals.prints.*
+/* 
 import net.fabricmc.fabric.api.renderer.v1.RendererAccess
 import net.fabricmc.fabric.api.renderer.v1.mesh.Mesh
 import net.fabricmc.fabric.api.renderer.v1.mesh.MeshBuilder
-import net.fabricmc.fabric.api.renderer.v1.mesh.MutableQuadView.BAKE_LOCK_UV
+import net.fabricmc.fabric.api.renderer.v1.mesh.MutableQuadView.BAKE_LOCK_UV                      -- needs converting actual code for non fabric rendering api
 import net.fabricmc.fabric.api.renderer.v1.mesh.QuadEmitter
 import net.fabricmc.fabric.api.renderer.v1.model.FabricBakedModel
 import net.fabricmc.fabric.api.renderer.v1.model.ModelHelper
 import net.fabricmc.fabric.api.renderer.v1.render.RenderContext
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener
-import net.minecraft.block.BlockState
-import net.minecraft.client.MinecraftClient
-import net.minecraft.client.render.model.BakedModel
-import net.minecraft.client.render.model.BakedQuad
-import net.minecraft.client.render.model.json.ModelOverrideList
-import net.minecraft.client.render.model.json.ModelTransformation
-import net.minecraft.client.texture.Sprite
-import net.minecraft.client.util.SpriteIdentifier
-import net.minecraft.item.ItemStack
-import net.minecraft.resource.ResourceManager
-import net.minecraft.resource.ResourceType
-import net.minecraft.screen.PlayerScreenHandler.BLOCK_ATLAS_TEXTURE
-import net.minecraft.text.Text.literal
-import net.minecraft.util.Formatting.BOLD
-import net.minecraft.util.Formatting.YELLOW
-import net.minecraft.util.math.BlockPos
-import net.minecraft.util.math.Direction
-import net.minecraft.util.math.random.Random
-import net.minecraft.world.BlockRenderView
-import org.cache2k.Cache2kBuilder
+*/
+import net.minecraft.world.level.block.state.BlockState
+import net.minecraft.client.Minecraft
+import net.minecraft.client.resources.model.BakedModel
+import net.minecraft.client.renderer.block.model.BakedQuad
+import net.minecraft.client.resources.model.ModelState
+import net.minecraft.client.renderer.block.model.ItemOverrides
+import net.minecraft.client.renderer.block.model.ItemTransforms
+import net.minecraft.client.renderer.texture.TextureAtlasSprite
+import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.item.ItemStack
+import net.minecraft.server.packs.resources.ResourceManager
+import net.minecraft.server.packs.PackType
+import net.minecraft.client.renderer.texture.TextureAtlas
+import net.minecraft.network.chat.Component
+import net.minecraft.ChatFormatting
+import net.minecraft.core.BlockPos
+import net.minecraft.core.Direction
+import net.minecraft.util.RandomSource
+import net.minecraft.world.level.BlockAndTintGetter
 import java.util.function.Supplier
 
 class PrintBakedModel(
   private val sprite: Sprite
 ) : BakedModel, FabricBakedModel {
-  private val mc by lazy { MinecraftClient.getInstance() }
+  private val mc by lazy { Minecraft.getInstance() }
   private val missingModel by lazy { mc.bakedModelManager.missingModel }
 
   private val meshBuilder = ThreadLocal.withInitial { RendererAccess.INSTANCE.renderer?.meshBuilder() }

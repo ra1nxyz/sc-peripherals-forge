@@ -24,9 +24,9 @@ I have never worked with kotlin or mc mods so this is a personal project for fun
 
 ### peripherals/client/block
 - [🛠️] PosterPrinterRenderer.kt
-- [-] PrintBakedModel.kt
-- [🛠️] PrinterRenderer.kt
-- [-] PrintUnbakedModel.kt
+- [🛠️] PrintBakedModel.kt
+- [❌] PrinterRenderer.kt - unclear if other fixes will cascade as other files get patched
+- [❌] PrintUnbakedModel.kt
 
 ### peripherals/client/gui
 - [-] PosterPrinterScreen.kt

@@ -104,10 +104,10 @@ class PosterPrinterBlockEntity(
 
 
   // onBroken is not a standard override in Forge, converted to a normal function
-  override fun onBroken() {
-    super.onBroken()
-    Containers.dropContents(level, blockPos, inventory)
-    inventory.clear()
+    override fun onBroken() {
+      super.onBroken()
+      Containers.dropContents(this.level, this.worldPosition, inventory)  // stupid stupid, note check in sc.io
+      inventory.clear()
   }
 
 
@@ -134,7 +134,7 @@ class PosterPrinterBlockEntity(
 
   private fun canMergeOutput(): Boolean {
     val current = getStack(OUTPUT_SLOT)
-    val output = PosterItem.create(level ?: return false, data)
+  val output = PosterItem.create(this.level ?: return false, data)
     return current.isEmpty || ItemStack.canCombine(current, output)
   }
 
@@ -152,17 +152,17 @@ class PosterPrinterBlockEntity(
 
   fun onTick(level: Level) {
     try {
-      if (level.isClientSide) return
+      if (this.level?.isClientSide == true) return
 
       tickInputSlot()
-      tickOutputSlot(level)
+      tickOutputSlot(this.level!!)
 
       if (inksDirty || outputDirty || dataDirty) {
         markDirty()
       }
 
       if (inksDirty) {
-        sendToAllTracking(level.getChunkAt(blockPos), PosterPrinterInkPacket(blockPos, ink))
+        sendToAllTracking(this.level!!.getChunkAt(this.worldPosition), PosterPrinterInkPacket(this.worldPosition, ink))
         inksDirty = false
       }
 
@@ -176,12 +176,12 @@ class PosterPrinterBlockEntity(
 
       val activelyPrinting = !outputStack.isEmpty
       if (activelyPrinting != cachedState.get(PosterPrinterBlock.printing)) {
-        level.setBlock(blockPos, cachedState.setValue(PosterPrinterBlock.printing, activelyPrinting), 3)
+        this.level!!.setBlock(this.worldPosition, cachedState.setValue(PosterPrinterBlock.printing, activelyPrinting), 3)
       }
 
       val hasPaper = !getStack(PAPER_SLOT).isEmpty
       if (hasPaper != cachedState.get(PosterPrinterBlock.hasPaper)) {
-        level.setBlock(blockPos, cachedState.setValue(PosterPrinterBlock.hasPaper, hasPaper), 3)
+        this.level!!.setBlock(this.worldPosition, cachedState.setValue(PosterPrinterBlock.hasPaper, hasPaper), 3)
       }
     } catch (e: Exception) {
       logger.error("Error in poster printer tick", e)

@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.client.renderer.LightTexture
 import net.minecraft.client.renderer.block.model.ItemTransforms
+import net.minecraft.client.Minecraft
 import net.minecraft.world.item.ItemDisplayContext
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
@@ -19,8 +20,7 @@ import org.joml.Matrix3f
 import org.joml.Matrix4f
 
 object PrinterRenderer : BlockEntityRenderer<PrinterBlockEntity> {
-  private val mc by lazy { MinecraftClient.getInstance() }
-  private val itemRenderer by mc::itemRenderer
+  private val itemRenderer = Minecraft.getInstance().itemRenderer
 
   override fun render(entity: PrinterBlockEntity, tickDelta: Float, matrices: PoseStack,
                       vertexConsumers: MultiBufferSource, light: Int, overlay: Int) {
@@ -42,7 +42,7 @@ object PrinterRenderer : BlockEntityRenderer<PrinterBlockEntity> {
     matrices.scale(0.5f, 0.5f, 0.5f)
 
     val model = itemRenderer.getModel(stack, printer.level, null, 0)
-    itemRenderer.renderItem(stack, ItemDisplayContext.FIXED, false, matrices, vertexConsumers, light, overlay,
+    itemRenderer.render(stack, ItemDisplayContext.FIXED, false, matrices, vertexConsumers, light, overlay,
       model)
 
     matrices.popPose()

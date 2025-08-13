@@ -163,7 +163,7 @@ class PosterPrinterRenderer(ctx: BlockEntityRendererProvider.Context) : BlockEnt
     base.render(matrices, consumer, light, overlay)
     roller.render(matrices, consumer, light, overlay)
 
-    if (entity.cachedState.get(PosterPrinterBlock.hasPaper)) {
+    if (entity.blockState.get(PosterPrinterBlock.hasPaper)) {  /* why isnt this working */
       renderPaperInTray(matrices, entity, vertexConsumers, light, overlay)
     }
 
